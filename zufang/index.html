@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>租房</title>
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="plugin/mint-ui/lib/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+	<div class="app" id="app">
+		<mt-navbar v-model="active" fixed="true">
+		  	<mt-tab-item id="tab-container1" @click.native.prevent="active = 'tab-container1'">选项一</mt-tab-item>
+		  	<mt-tab-item id="tab-container2" @click.native.prevent="active = 'tab-container2'">选项二</mt-tab-item>
+		  	<mt-tab-item id="tab-container3" @click.native.prevent="active = 'tab-container3'">选项三</mt-tab-item>
+		</mt-navbar>
+	    
+	    <div class="page-tab-container">  
+	      <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>  
+	        <mt-tab-container-item id="tab-container1">  
+	        	<div class='house-item'>
+				    <div class="cell-item">
+				      <div class="cell-item-img" style="background-image:url(http://apps.source.qydw.net/abc1514007038.jpg)">
+				        <span class="cell-item-allimg">2图</span>
+				      </div>
+				      <div class="cell-item-info">
+				        <div class="cell-item-title">温馨复式安静</div>
+				        <div class="cell-item-detail">天河-珠江新城 | 1室0厅1卫生 | 整租 | 25M</div>
+				        <div class="cell-item-mark">￥3000</div>
+				      </div>
+				    </div>
+				    <div class="btn-group">
+				    	<button>修改价格</button><button>停止放租</button><button>签约</button>
+				    </div>
+				</div>
+
+				<div class='house-item'>
+				    <div class="cell-item">
+				      <div class="cell-item-img" style="background-image:url(http://apps.source.qydw.net/abc1514007038.jpg)">
+				        <span class="cell-item-allimg">2图</span>
+				      </div>
+				      <div class="cell-item-info">
+				        <div class="cell-item-title">温馨复式安静</div>
+				        <div class="cell-item-detail">天河-珠江新城 | 1室0厅1卫生 | 整租 | 25M</div>
+				        <div class="cell-item-mark">￥3000</div>
+				      </div>
+				    </div>
+				    <div class="btn-group">
+				    	<button @click="sendBill(1)">发账单</button>
+				    	<button>入账明细</button>
+				    	<div class="hint-text">本月租金已付清</div>
+				    </div>
+				    <div class="btn-group">
+				    	<button  @click="sendBill(2)">一键催租</button><button>再次放租</button><button>其他功能</button>
+				    </div>
+				</div>
+	        </mt-tab-container-item>  
+	        <mt-tab-container-item id="tab-container2">  
+	            <!-- cell组件 -->  
+	          <mt-cell v-for="n in 5" title="tab-container 2"></mt-cell>  
+	        </mt-tab-container-item>  
+	        <mt-tab-container-item id="tab-container3">  
+	            <!-- cell组件 -->  
+	          <mt-cell v-for="n in 7" title="tab-container 3"></mt-cell>  
+	        </mt-tab-container-item>  
+	      </mt-tab-container>  
+	    </div>
+
+	    <mt-popup v-model="showMask" popup-transition="popup-fade">
+		  	<div class="sendbill-pannel"  v-if="maskType==1">
+		  		<div class="bill-title">501房-账单</div>
+		  		<div class="bill-pannel">
+		  			<table>
+		  				<tr><td>月份</td><td><div class="select-input"></div></td></tr>
+		  				<tr><td>租金</td><td class="input-item"><input type="text"></td></tr>
+		  				<tr><td>电费</td><td class="input-item"><input type="text"></td></tr>
+		  				<tr><td>水费</td><td class="input-item"><input type="text"></td></tr>
+		  				<tr><td>其他</td><td class="input-item"><input type="text"></td></tr>
+		  			</table>
+		  		</div>
+		  		<button>确认发送</button>
+		  	</div>
+
+		  	<div class="sendbill-pannel" v-if="maskType==2">
+		  		<div class="bill-title">501房-账单</div>
+		  		<div class="bill-pannel">
+					<div class="deadline">
+						<div>最后交租日期</div><div class="select-input small-input"></div>
+					</div>
+					<div class="hint-bill">
+						<span>温馨提示：</span>使用此功能，如租客在10月25号12:00前没有交房租，将无法开启门锁！
+					</div>
+		  		</div>
+		  		<button>确认催租</button>
+		  	</div>
+		</mt-popup>
+	</div>
+<script type="text/javascript" src="./plugin/vue.min.js?v=1"></script>
+<script type="text/javascript" src="./plugin/mint-ui/lib/index.js"></script>
+<script type="text/javascript" src="./plugin/flexible.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el:"#app",
+		data:{
+			active: 'tab-container1',
+			selected:1,
+			showMask:false,
+			maskType:1
+		},
+		created:function() {
+			console.log(this.data)
+		},
+		methods:{
+			switchTab:function(tab){
+				this.active = tab;
+			},
+			sendBill:function(type){
+				this.showMask = true;
+				this.maskType = type;
+			}
+		}
+	})
+
+</script>
+</body>
+</html>

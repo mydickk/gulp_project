@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>灯控报表</title>
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="./plugin/common.css?v=3">
+	<link rel="stylesheet" type="text/css" href="./css/lightControlReport.css">
+</head>
+<body>
+	<div class="app" id="app">
+		<header class="header">
+        <div class="left" onclick="javascript:history.go(-1); ">
+        	<div class="icon-back"></div>
+        </div>
+        <div class="center">灯控报表</div>
+        <div class="right"></div>
+	    </header>
+
+	    <section class="content">
+	    	<div class="court-view-header">
+			    <h2>总时长统计(分钟):</h2>
+			    <div class="court-view-header-msgbar">
+				    <div class="court-view-header-msgbar-left">
+				        <i class="court-view-header-msgbar-icon"><img src='./images/icon-light.png'></i>
+				        <table>
+				          	<tr><td>开灯</td></tr>
+				          	<tr><td>3302</td></tr>
+				        </table>
+				    </div>
+				    <div class="court-view-header-msgbar-right">
+				        <i class="court-view-header-msgbar-icon"><img src='./images/icon-court.png'></i>
+				        <table>
+				          	<tr><td>场次</td></tr>
+				          	<tr><td>3540</td></tr>
+				        </table>
+				    </div>
+			    </div>
+			    <div class="court-view-header-tips">Tips：若开灯时长和场次时长差距过大，则可能出现只开灯不收费的情况。</div>
+			    <div class="court-view-header-selectbar" id="selectbar">
+				    <span class="court-view-header-selectbar-1" :class="{cur:page=='time'}" @click="chgPage('time')">按时段</span>
+				    <span class="court-view-header-selectbar-2" :class="{cur:page=='court'}"  @click="chgPage('court')">按场地</span>
+				    <span class="court-view-header-selectbar-3">灯光场次明细图 ></span>
+			    </div>
+
+			    <div class="cc" v-if="page=='court'">
+			        <div class="cv-table">
+			            <table >
+			                <thead>
+			                    <tr>
+			                        <td>场地</td>
+			                        <td>开灯时长 － </td>
+			                        <td>场次时长<br>(分钟)</td>
+			                        <td> ＝ 时间差</td>
+			                    </tr>
+			                </thead>
+			                <tbody>
+			                    <tr>
+			                        <td>1</td>
+			                        <td>2</td>
+			                        <td>3</td>
+			                        <td>4</td>
+			                    </tr>
+			                </tbody>
+			            </table>
+			        </div>
+			    </div>
+
+			    <div class="component-light-time" v-if="page=='time'">
+				    <div class="component-light-time-left">
+				        <ul>
+				          <li >场地</li>
+				          <li >场地</li>
+				        </ul>
+				    </div>
+				    <div class="component-light-time-right">
+				        <table>
+					        <thead>
+					            <tr>
+					              <td>灯光时长</td>
+					              <td>场次时长</td>
+					              <td>差值</td>
+					            </tr>
+					        </thead>
+					        <tbody>
+					            <tr>
+					              <td>2</td>
+					              <td>2</td>
+					              <td>2</td>
+					            </tr>
+					            <tr>
+					              <td>2</td>
+					              <td>2</td>
+					              <td>2</td>
+					            </tr>
+					        </tbody>
+				        </table>
+				    </div>
+			    </div>
+			</div>
+	    </section>
+	</div>
+<script type="text/javascript" src="./plugin/flexible.js"></script>
+<script type="text/javascript" src="./plugin/common.js?v=1"></script>
+<script type="text/javascript" src="./plugin/vue.min.js?v=1"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el:"#app",
+		data:{
+			page:'time'
+		},
+		methods:{
+			chgPage:function (page) {
+				console.log(page)
+				this.page = page;
+			}
+		}
+	})
+</script>
+</body>
+</html>

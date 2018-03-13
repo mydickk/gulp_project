@@ -1,0 +1,75 @@
+body {
+  background-color: #fff; }
+
+.light-report-title {
+  padding-top: 0.46154rem;
+  padding-bottom: 0.30769rem;
+  text-align: left;
+  font-size: 0.35rem; }
+  .light-report-title span {
+    padding-left: 0.30769rem; }
+  .light-report-title i {
+    display: inline-block;
+    width: 0.30769rem;
+    height: 0.30769rem;
+    border-radius: 50%; }
+  .light-report-title .blue {
+    background-color: #3c89d7;
+    margin-left: 0.46154rem; }
+  .light-report-title .yellow {
+    background-color: #ffba49;
+    margin-left: 1.07692rem; }
+
+.light-report-chart {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.35rem; }
+  .light-report-chart .light-report-chart-left {
+    text-align: center;
+    width: 2rem; }
+    .light-report-chart .light-report-chart-left ul {
+      padding-top: 0.76rem; }
+      .light-report-chart .light-report-chart-left ul li {
+        height: 1.5rem; }
+  .light-report-chart .light-report-chart-right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    overflow-x: scroll; }
+    .light-report-chart .light-report-chart-right .light-report-chart-scroll-box {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+    .light-report-chart .light-report-chart-right .light-report-chart-right-main {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      position: relative; }
+      .light-report-chart .light-report-chart-right .light-report-chart-right-main ul {
+        width: 100%;
+        height: 100%; }
+        .light-report-chart .light-report-chart-right .light-report-chart-right-main ul li {
+          width: 1.8rem;
+          height: 100%;
+          float: left;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box;
+          border-left: 1px solid #ddd; }
+      .light-report-chart .light-report-chart-right .light-report-chart-right-main .light-report-chart-bar {
+        height: 0.30769rem;
+        border-radius: 4px;
+        position: absolute; }
+    .light-report-chart .light-report-chart-right .light-report-chart-right-tltle {
+      height: 0.76rem;
+      text-align: left; }
+      .light-report-chart .light-report-chart-right .light-report-chart-right-tltle li {
+        width: 1.8rem;
+        float: left; }

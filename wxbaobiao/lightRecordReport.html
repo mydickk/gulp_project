@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开灯纪录报表</title>
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="./plugin/common.css?v=3">
+	<link rel="stylesheet" type="text/css" href="./css/lightRecordReport.css">
+	<script type="text/javascript" src="./plugin/flexible.js"></script>
+</head>
+<body>
+	<div class="app" id="app">
+		<header class="header">
+	        <div class="left" onclick="javascript:history.go(-1); ">
+	        	<div class="icon-back"></div>
+	        </div>
+	        <div class="center">开灯纪录报表</div>
+	        <div class="right"></div>
+	    </header>
+
+	    <section class="content">
+		  	<div class="light-report-title">
+			    <i class="blue"></i>
+			    <span>场次</span>
+			    <i class="yellow"></i>
+			    <span>开灯</span>
+		  	</div>
+		  	<div class="light-report-chart">
+			    <div class="light-report-chart-left">
+			      	<ul>
+				        <li v-for="item in lightReportData.chartData">一号场</li>
+				        <li>一号场</li>
+				        <li>一号场</li>
+				        <li>一号场</li>
+				        <li>一号场</li>
+				        <li>一号场</li>
+				        <li>一号场</li>
+
+			      	</ul>
+			    </div>
+			    <div class="light-report-chart-right">
+			    	<!-- 长度 = (小时数+1)*1.8rem -->
+			      	<div class="light-report-chart-scroll-box" style="width:14.4rem;overflow: hidden;">
+				        <div class="light-report-chart-right-tltle">
+				          	<ul>
+					            <li v-for="item in lightReportData.hours">8:00</li>
+					            <li>09:00</li>
+					            <li>10:00</li>
+					            <li>11:00</li>
+					            <li>12:00</li>
+					            <li>13:00</li>
+					            <li>14:00</li>
+					            <li>15:00</li>
+				          	</ul>
+				        </div>
+				        <!-- 高度 = 场地数*1.5rem -->
+				        <div class="light-report-chart-right-main" style="height: 10.5rem;" v-bind:style="lightReportData.styleHeight">
+				          	<ul>
+					          	<!-- 竖线 -->
+					            <li v-for="item in lightReportData.hours"></li>
+					            <li></li>
+					            <li></li>
+					            <li></li>
+					            <li></li>
+					            <li></li>
+					            <li></li>
+					            <li></li>
+				          	</ul>
+				          	<!-- 
+					          	开灯线条 一个小时 = 1.8rem ，一个场地占用高度 = 1.5rem
+								style = {
+									left:1.8rem  
+									top:1.5rem
+									width:1.8rem
+									backgroundColor:"#3c89d7"  "#ffba49"
+								}
+				           	-->
+				          	<div style="left: 1.8rem;top: 1.5rem;width: 1.8rem;background-color:#3c89d7; " class="light-report-chart-bar" v-for="item in lightReportData.lightLists" v-bind:style="item"></div>
+				          	<div style="left: 1.8rem;top: 2rem;width: 1.8rem;background-color:#ffba49; " class="light-report-chart-bar" v-for="item in lightReportData.lightLists" v-bind:style="item"></div>
+				        </div>
+			      	</div>
+			    </div>
+		  	</div>
+	    </section>
+	</div>
+<script type="text/javascript" src="./plugin/vue.min.js?v=1"></script>
+<script type="text/javascript" src="./plugin/common.js?v=1"></script>
+
+</body>
+</html>

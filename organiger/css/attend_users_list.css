@@ -1,0 +1,53 @@
+body {
+  background: white; }
+
+section {
+  font-size: 0.4rem; }
+
+.qu-attend-title {
+  color: #5B73F2;
+  padding: 0.3rem; }
+
+.qu-attend-user-container {
+  margin-top: 1rem;
+  padding: 0.4rem; }
+  .qu-attend-user-container .qu-attend-user-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #222222;
+    border-top: 1px solid #dedede;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0.3rem 0; }
+    .qu-attend-user-container .qu-attend-user-title div {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      text-align: center; }
+  .qu-attend-user-container .qu-attend-user-list .qu-user-item {
+    border-top: 1px solid #dedede;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0.3rem 0; }
+    .qu-attend-user-container .qu-attend-user-list .qu-user-item div {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1; }
+    .qu-attend-user-container .qu-attend-user-list .qu-user-item .qu-attend-user img {
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle; }
+    .qu-attend-user-container .qu-attend-user-list .qu-user-item .qu-attend-user .sex {
+      width: 0.6rem;
+      vertical-align: middle;
+      margin-left: 0.1rem;
+      margin-top: 0.1rem; }
+    .qu-attend-user-container .qu-attend-user-list .qu-user-item .qu-attend-time {
+      color: #666666;
+      text-align: right;
+      line-height: 1rem; }

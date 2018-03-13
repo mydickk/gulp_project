@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>微信报表</title>
+	<meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+	<link rel="stylesheet" href="./plugin/weui/weui.min.css">
+	<link rel="stylesheet" href="./plugin/common.css?v=3">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+</head>
+<body>
+	<div class="app" id="app">
+		<header class="header flex-center"  style="padding-left: 0.6rem;">
+			<div class="icon-back" onclick="javascript:history.go(-1); "></div>
+	        <div class="time-picker flex-betweem" id="start_date" data-name="start_date">
+	        	<div class="time-show">2017-08-01</div>
+	        	<div class="time-sel">
+	        		<div class="time-sel-trangle"></div>
+	        	</div>
+	        </div>
+	        <div class="center-time">至</div>
+	        <div class="time-picker flex-betweem" id="end_date" data-name="end_date">
+	        	<div class="time-show">2017-08-01</div>
+	        	<div class="time-sel">
+	        		<div class="time-sel-trangle"></div>
+	        	</div>
+	        </div>
+	        <div class="query-btn" id="query_btn">查询</div>
+	    </header>
+
+	    <section class="content">
+	    	<div class="goods-top-title">商品销量统计：</div>
+	    	<div class="table-flex">
+	    		<div class="table-flex-thead">
+	    			<div><span>类型</span><span>名称</span><span>销量</span><span>库存</span></div>
+	    		</div>
+	    		<div class="table-flex-tbody">
+	    			<div><span>饮料</span><span>脉动</span><span>1</span><span>100</span></div>
+	    		</div>
+	    	</div>
+	    </section>
+	</div>
+<script type="text/javascript" src="./plugin/flexible.js"></script>
+<script type="text/javascript" src='./plugin/jquery-3.2.1.min.js'></script>
+<script type="text/javascript" src="./plugin/weui/weui.min.js"></script>
+<script type="text/javascript" src="./plugin/common.js?v=1"></script>
+<script type="text/javascript">
+	
+	function compareDate(d1,d2){
+	  return ((new Date(d1.replace(/-| /g,"\/"))) > (new Date(d2.replace(/-| /g,"\/"))));
+	}
+
+	$(function () {
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1;
+		var day = date.getDate();
+		$(".time-picker").children('.time-show').html(year+' '+(month<10?'0'+month:month)+'-'+(day<10?'0'+day:day));
+		
+		$(".time-picker").click(function(event) {
+			var $this = $(this);
+			var start = 2014;
+			if($(this).data('name')=='end_date') {
+				start = $("#start_date").children('.time-show').html().replace(/' '/g, "-");
+			}
+			weui.datePicker({
+			    start: start,
+			    end: 2040,
+			    defaultValue: [year, month, day],
+			    onConfirm: function(result){
+			        var time = result[0].value + ' ';
+			        	time = time + (result[1].value<10?'0'+result[1].value:result[1].value) + '-';
+			        	time = time + (result[2].value<10?'0'+result[2].value:result[2].value);
+			        $this.children('.time-show').html(time);
+			        if ($this.data('name')=='start_date') { //是开始时间
+			        	var end_time = $("#end_date").children('.time-show').html();
+						var compare = compareDate(time,end_time)
+						if (compare) {
+							$("#end_date").children('.time-show').html(time)
+						}
+					}
+			    },
+			    id: 'datePicker'
+			});
+		});
+	})
+</script>
+</body>
+</html>

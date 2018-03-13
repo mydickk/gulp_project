@@ -1,0 +1,169 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html, body {
+  background-color: #fff; }
+
+section.content {
+  margin-top: 2.3rem; }
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-justify-content: center;
+  -ms-flex-justify-content: center;
+  -o-flex-justify-content: center; }
+
+.flex-betweem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-justify-content: space-between;
+  -ms-flex-justify-content: space-between;
+  -o-flex-justify-content: space-between; }
+
+.header {
+  background-color: #3B8BD7;
+  color: white;
+  font-size: 0.45rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .header .center-time {
+    padding: 0 0.2rem; }
+  .header .query-btn {
+    margin-left: 0.2rem; }
+
+.time-picker {
+  background-color: #fff;
+  color: #666;
+  height: 0.8rem;
+  line-height: 0.9rem;
+  border-radius: 5px;
+  overflow: hidden; }
+  .time-picker .time-show {
+    padding: 0 0.2rem; }
+  .time-picker .time-sel {
+    width: 0.7rem;
+    height: 100%;
+    background-color: #f5f5f5;
+    position: relative; }
+    .time-picker .time-sel .time-sel-trangle {
+      width: 0.25rem;
+      height: 0.25rem;
+      -webkit-transform-origin: 50% 50% 50%;
+              transform-origin: 50% 50% 50%;
+      -webkit-transform: rotateZ(-45deg) translate(0, -50%);
+      transform: rotateZ(-45deg) translate(0, -50%);
+      border-bottom: 2px solid #676767;
+      border-left: 2px solid #676767;
+      position: absolute;
+      top: 50%;
+      left: 0.3rem;
+      margin-top: -0.05rem; }
+
+.top-title {
+  font-size: 0.35rem;
+  padding: 0.2rem 0.35rem;
+  color: #777;
+  border-bottom: 1px solid #ddd; }
+
+.panel {
+  padding: 0 0.3rem;
+  font-size: 0.4rem;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 0.8rem; }
+  .panel .panel-title {
+    color: #3c89d7;
+    font-size: 0.5rem;
+    line-height: 1rem;
+    padding-top: 0.5rem; }
+  .panel .cell {
+    border-top: solid 1px #ddd;
+    padding: 0.4rem 0 0.2rem 0; }
+    .panel .cell .extra-label {
+      color: #3c89d7;
+      border: 1px solid #3c89d7;
+      border-radius: 1rem;
+      padding: 0.15rem 0.25rem;
+      line-height: 0.5rem;
+      font-size: 0.34rem;
+      margin-left: 0.25rem; }
+
+span.small-hint {
+  font-size: 0.35rem; }
+
+.header .icon-back {
+  left: 0.4rem;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff; }
+
+.goods-top-title {
+  font-size: 0.48rem;
+  padding: 0 0.4rem;
+  margin-bottom: 0.6rem;
+  color: #111; }
+
+.table-flex {
+  font-size: 0.4rem; }
+  .table-flex .table-flex-thead {
+    border-bottom: 1px solid #ddd;
+    line-height: 1rem; }
+    .table-flex .table-flex-thead div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding: 0 0.4rem; }
+      .table-flex .table-flex-thead div span {
+        -webkit-box-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        text-align: center;
+        font-size: 0.35rem;
+        color: #777; }
+      .table-flex .table-flex-thead div span:nth-child(1) {
+        text-align: left;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
+      .table-flex .table-flex-thead div span:last-child {
+        text-align: right;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
+  .table-flex .table-flex-tbody {
+    padding: 0 0.4rem;
+    line-height: 1.2rem;
+    padding: 0 0.4rem; }
+    .table-flex .table-flex-tbody div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      border-bottom: 1px solid #ddd; }
+      .table-flex .table-flex-tbody div span {
+        -webkit-box-flex: 2;
+            -ms-flex: 2;
+                flex: 2;
+        color: #111;
+        font-size: 0.38rem;
+        text-align: center; }
+      .table-flex .table-flex-tbody div span:nth-child(1) {
+        color: #555;
+        text-align: left;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }
+      .table-flex .table-flex-tbody div span:last-child {
+        text-align: right;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; }

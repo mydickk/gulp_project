@@ -1,0 +1,173 @@
+@charset "UTF-8";
+section {
+  font-size: 0.42rem;
+  font-family: "微软雅黑";
+  color: #222222; }
+
+section.content {
+  margin-top: 1.5rem; }
+
+.qu-cells {
+  background-color: white;
+  padding: 0.2rem 0; }
+  .qu-cells .qu-cell {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    color: #222222; }
+    .qu-cells .qu-cell .qu-position {
+      margin-right: 0.45rem;
+      font-size: 0.6rem;
+      color: #5b73f2; }
+    .qu-cells .qu-cell span {
+      margin-right: 0.15rem; }
+    .qu-cells .qu-cell .label {
+      font-weight: 500;
+      padding: .4em .3em .3em; }
+    .qu-cells .qu-cell img {
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle; }
+  .qu-cells .qu-cell-img {
+    position: relative; }
+    .qu-cells .qu-cell-img span {
+      line-height: 1rem; }
+  .qu-cells .qu-cell_img-groud {
+    position: relative; }
+    .qu-cells .qu-cell_img-groud img {
+      margin: 0 0.1rem; }
+    .qu-cells .qu-cell_img-groud .user-more {
+      height: 100%;
+      width: 1rem;
+      background: white;
+      line-height: 1rem;
+      font-size: 0.45rem;
+      text-align: right;
+      position: absolute;
+      right: 0.2rem; }
+      .qu-cells .qu-cell_img-groud .user-more span {
+        margin: 0;
+        color: #AAAAAA; }
+      .qu-cells .qu-cell_img-groud .user-more span:nth-child(1) {
+        margin-right: -0.3rem; }
+
+.call {
+  float: right;
+  position: absolute;
+  right: 0.2rem; }
+  .call span {
+    color: #5b73f2;
+    margin-left: 0.1rem; }
+
+.qu-user {
+  border-top: 1px solid #e6e6e6; }
+
+.captain {
+  display: block;
+  position: relative; }
+
+.captain:after {
+  content: "队长";
+  display: block;
+  background: #F4EB2B;
+  color: #FFB502;
+  position: absolute;
+  border: 1px solid #FFB502;
+  bottom: 0.01rem;
+  right: -0.25rem;
+  font-size: 0.25rem;
+  padding: 0 0.1rem;
+  border-radius: 1rem; }
+
+.light-color {
+  font-size: 0.46rem;
+  color: #666666; }
+
+.label-groud div {
+  font-size: 0.35rem;
+  margin-right: 0.2rem;
+  padding: 0.05rem 0.2rem;
+  border-radius: 0.1rem; }
+
+.blue {
+  border: 1px solid #5b73f2;
+  color: #5b73f2; }
+
+.red {
+  border: 1px solid #ff5a5f;
+  color: #ff5a5f; }
+
+.oragin {
+  border: 1px solid #ffa202;
+  color: #ffa202; }
+
+.qu-textbox {
+  margin-top: 0.3rem;
+  padding: 0.4rem;
+  background: white;
+  height: 3rem; }
+  .qu-textbox .qu-textbox_title {
+    color: #222222; }
+
+.qu-words {
+  background: white;
+  margin-top: 0.3rem; }
+  .qu-words .qu-words_title {
+    font-size: 0.45rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.4rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .qu-words .qu-words_title .issue-words {
+      color: #666; }
+  .qu-words .qu-words-item {
+    padding: 0.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 1px solid #e6e6e6; }
+    .qu-words .qu-words-item .qu-words-user img {
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 50%; }
+    .qu-words .qu-words-item .words-comment-box {
+      padding-left: 0.4rem;
+      width: 100%; }
+      .qu-words .qu-words-item .words-comment-box .qu-words_top .comment-username {
+        font-size: 0.35rem; }
+      .qu-words .qu-words-item .words-comment-box .qu-words_top .comment-time {
+        font-size: 0.28rem;
+        color: #666666; }
+      .qu-words .qu-words-item .words-comment-box .qu-words-content {
+        font-size: 0.35rem;
+        margin: 0.2rem 0rem; }
+    .qu-words .qu-words-item .qu-words-reply {
+      background: #F6F6F9;
+      font-size: 0.35rem;
+      padding: 0.3rem; }
+      .qu-words .qu-words-item .qu-words-reply span:nth-child(1) {
+        color: #666666; }
+
+footer {
+  padding-bottom: 0.3rem;
+  background: white;
+  overflow: hidden; }
+  footer .footer-tip {
+    margin: 0.3rem;
+    text-align: center; }
+  footer .attend-btn {
+    font-size: 0.45rem;
+    color: #ffffff;
+    background: #5B73F2;
+    border-radius: 1rem;
+    width: 90%;
+    padding: 0.2rem;
+    margin: 0 auto;
+    text-align: center; }
